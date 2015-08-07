@@ -11,7 +11,7 @@ class ot_request(orm.Model):
 			context = {}
 		now = datetime.datetime.now()
 		now_replace = now.replace(hour=4,minute=0,second=0,microsecond=0)
-		if now < now_replace:
+		if now > now_replace:
 			raise osv.except_osv(_(u'warning'),_(u'time is over 12:00,you can not create ot request'))
 		return super(ot_request,self).create(cr,uid,vals,context=context)
 
