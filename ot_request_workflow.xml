@@ -1,0 +1,101 @@
+<openerp>
+	<data>
+
+		<record model="workflow" id="wkf_ot_request">
+	        <field name="name">ot.request.wkf</field>
+	        <field name="osv">ot.request</field>
+	        <field name="on_create">True</field>
+    	</record>
+
+        <record model="workflow.activity" id="act_draft"> <!-- draft -->
+	        <field name="wkf_id" ref="wkf_ot_request" />
+	        <field name="name">draft</field>
+	        <field name="flow_start" eval="True"/>
+	        <field name="kind">function</field>
+	        <field name="action">action_draft()</field>
+	    </record>
+
+	    <record model="workflow.activity" id="act_refused_by_department">
+	    	<field name="wkf_id" ref="wkf_ot_request" />
+	    	<field name="name">refused by department</field>
+	    	<field name="kind">function</field>
+	    	<field name="action">action_refused_by_department()</field>
+	    </record>
+
+        <record model="workflow.activity" id="act_refused_by_administration">
+            <field name="wkf_id" ref="wkf_ot_request" />
+            <field name="name">refused by administration</field>
+            <field name="kind">function</field>
+            <field name="action">action_refused_by_administration()</field>
+        </record>
+
+	    <record model="workflow.activity" id="act_confirm"> <!-- submitted -->
+	        <field name="wkf_id" ref="wkf_ot_request" />
+	        <field name="name">confirm</field>
+	        <field name="kind">function</field>
+	        <field name="action">action_confirm()</field>
+    	</record>
+
+    	<record model="workflow.activity" id="act_department">
+    		<field name="wkf_id" ref="wkf_ot_request" />
+    		<field name="name">department</field>
+    		<field name="kind">function</field>
+    		<field name="action">action_department()</field>
+    	</record>
+
+    	<record model="workflow.activity" id="act_administration">
+    		<field name="wkf_id" ref="wkf_ot_request" />
+    		<field name="name">administration</field>
+    		<field name="kind">function</field>
+    		<field name="action">action_administration()</field>
+    	</record>
+
+    	<record model="workflow.transition" id="confirm_to_draft">
+    		<field name="act_from" ref="act_confirm" />
+    		<field name="act_to" ref="act_draft" />
+    		<field name="signal">draft</field>
+    	</record>
+
+    	<record model="workflow.transition" id="refused_by_department_to_draft">
+    		<field name="act_from" ref="act_refused_by_department" />
+    		<field name="act_to" ref="act_draft" />
+    		<field name="signal">draft</field>
+    	</record>
+
+        <record model="workflow.transition" id="refused_by_administration_to_draft">
+            <field name="act_from" ref="act_refused_by_administration" />
+            <field name="act_to" ref="act_draft" />
+            <field name="signal">draft</field>
+        </record>  
+    
+    	<record model="workflow.transition" id="draft_to_confirm">
+    		<field name="act_from" ref="act_draft" />
+    		<field name="act_to" ref="act_confirm" />
+    		<field name="signal">confirm</field>
+    	</record>
+
+    	<record model="workflow.transition" id="confirm_to_refused_by_department">
+    		<field name="act_from" ref="act_confirm" />
+    		<field name="act_to" ref="act_refused_by_department" />
+    		<field name="signal">refused by department</field>
+    	</record>
+
+    	<record model="workflow.transition" id="department_to_refused_by_administration">
+    		<field name="act_from" ref="act_department" />
+    		<field name="act_to" ref="act_refused_by_administration" />
+    		<field name="signal">refused by administration</field>
+    	</record>
+
+    	<record model="workflow.transition" id="confirm_to_department">
+    		<field name="act_from" ref="act_confirm" />
+    		<field name="act_to" ref="act_department" />
+    		<field name="signal">department</field>
+    	</record>
+
+    	<record model="workflow.transition" id="department_to_administration">
+    		<field name="act_from" ref="act_department" />
+    		<field name="act_to" ref="act_administration" />
+    		<field name="signal">administration</field>
+    	</record>
+	</data>
+</openerp>

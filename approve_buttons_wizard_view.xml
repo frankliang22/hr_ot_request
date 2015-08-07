@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_approve_buttons_wizard" model="ir.ui.view">
+			<field name="name">Approve all the requests for today</field>
+			<field name="model">approve.buttons</field>
+			<field name="arch" type="xml">
+				<form string="Approve Buttons">
+					<group>
+						<label string="The red button below is to approve or refuse all the requests for today" />
+					</group>
+					<footer>
+						<button name="department_approve_request" class="oe_highlight" type="object" string="Approve by Department" groups="hr_ot_request.ot_request_department_group"/>
+						or
+						<button name="administration_approve_request" class="oe_highlight" type="object" string="Approved by Administration" />
+						or
+						<button name="department_refuse_request" class="oe_highlight" type="object" string="Refused by Department" />
+						or
+						<button name="administration_refuse_request" class="oe_highlight" type="object" string="Refused by Administration" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<act_window name="Approve Buttons" res_model="approve.buttons" src_model="ot.request" view_mode="form" target="new" key2="client_action_multi" id="action_approve_buttons"/>
+	</data>
+</openerp>

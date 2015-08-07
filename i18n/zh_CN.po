@@ -1,0 +1,251 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_ot_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-04 07:23+0000\n"
+"PO-Revision-Date: 2015-08-04 07:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_ot_request
+#: model:ir.actions.act_window,help:hr_ot_request.ot_request_list_action
+msgid "<p class=\"oe_view_nocontent_create\">Create a new OT request</p>\n"
+"		    "
+msgstr "<p class=\"oe_view_nocontent_create\">创建一个新的加班申请</p>\n"
+"		    "
+
+#. module: hr_ot_request
+#: field:ot.request,applicant:0
+msgid "Applicant"
+msgstr "申请人"
+
+#. module: hr_ot_request
+#: view:approve.buttons:hr_ot_request.view_approve_buttons_wizard
+#: model:ir.actions.act_window,name:hr_ot_request.action_approve_buttons
+#: model:ir.ui.menu,name:hr_ot_request.buttons_menu
+msgid "Approve Buttons"
+msgstr "审批按键"
+
+#. module: hr_ot_request
+#: view:approve.buttons:hr_ot_request.view_approve_buttons_wizard
+msgid "Approve by Department"
+msgstr "部门已批准"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_form_view
+#: selection:ot.request,state:0
+msgid "Approved By Administration"
+msgstr "行政部已批准"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_form_view
+#: selection:ot.request,state:0
+msgid "Approved By Department"
+msgstr "部门已批准"
+
+#. module: hr_ot_request
+#: view:approve.buttons:hr_ot_request.view_approve_buttons_wizard
+msgid "Approved by Administration"
+msgstr "行政部已批准"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_search_view
+msgid "Approved by Administration in Today"
+msgstr "今天行政部所批准的申请"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_search_view
+msgid "Approved by Department Requests in Today"
+msgstr "今天部门所批准的申请"
+
+#. module: hr_ot_request
+#: view:approve.buttons:hr_ot_request.view_approve_buttons_wizard
+msgid "Cancel"
+msgstr "取消"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_form_view
+#: selection:ot.request,state:0
+msgid "Confirm"
+msgstr "确认"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_search_view
+msgid "Confirmed Requests in Today"
+msgstr "今天已确认的申请"
+
+#. module: hr_ot_request
+#: field:ot.request,create_date:0
+msgid "Create_date"
+msgstr "Create_date"
+
+#. module: hr_ot_request
+#: field:approve.buttons,create_uid:0
+#: field:ot.request,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: hr_ot_request
+#: field:approve.buttons,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: hr_ot_request
+#: field:ot.request,department:0
+msgid "Department"
+msgstr "部门"
+
+#. module: hr_ot_request
+#: field:ot.request,description:0
+msgid "Description"
+msgstr "描述"
+
+#. module: hr_ot_request
+#: selection:ot.request,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_search_view
+msgid "Filter"
+msgstr "过滤器"
+
+#. module: hr_ot_request
+#: field:approve.buttons,id:0
+#: field:ot.request,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_ot_request
+#: field:approve.buttons,write_uid:0
+#: field:ot.request,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: hr_ot_request
+#: field:approve.buttons,write_date:0
+#: field:ot.request,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_search_view
+msgid "Management"
+msgstr "Management"
+
+#. module: hr_ot_request
+#: field:ot.request,number_of_applicants:0
+msgid "Number of Applicants"
+msgstr "申请人数"
+
+#. module: hr_ot_request
+#: model:ir.actions.act_window,name:hr_ot_request.ot_request_list_action
+#: model:ir.ui.menu,name:hr_ot_request.ot_request_menu
+#: model:ir.ui.menu,name:hr_ot_request.request_menu
+msgid "OT Request"
+msgstr "加班申请"
+
+#. module: hr_ot_request
+#: model:res.groups,name:hr_ot_request.ot_request_administration_group
+msgid "OT Request / Administration"
+msgstr "OT Request / Administration"
+
+#. module: hr_ot_request
+#: model:res.groups,name:hr_ot_request.ot_request_department_group
+msgid "OT Request / Department"
+msgstr "OT Request / Department"
+
+#. module: hr_ot_request
+#: model:res.groups,name:hr_ot_request.ot_request_user_group
+msgid "OT Request / Users"
+msgstr "OT Request / Users"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_calendar_view
+msgid "OT Request Calendar"
+msgstr "OT Request Calendar"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_form_view
+msgid "OT Request Form"
+msgstr "OT Request Form"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_tree_view
+msgid "OT Request Tree"
+msgstr "OT Request Tree"
+
+#. module: hr_ot_request
+#: view:approve.buttons:hr_ot_request.view_approve_buttons_wizard
+#: view:ot.request:hr_ot_request.ot_request_form_view
+#: selection:ot.request,state:0
+msgid "Refused by Administration"
+msgstr "行政部已拒绝"
+
+#. module: hr_ot_request
+#: view:approve.buttons:hr_ot_request.view_approve_buttons_wizard
+#: view:ot.request:hr_ot_request.ot_request_form_view
+#: selection:ot.request,state:0
+msgid "Refused by Department"
+msgstr "部门已拒绝"
+
+#. module: hr_ot_request
+#: field:ot.request,date_start:0
+msgid "Request Date"
+msgstr "申请日期"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_form_view
+msgid "Set to Draft"
+msgstr "设为草稿"
+
+#. module: hr_ot_request
+#: view:approve.buttons:hr_ot_request.view_approve_buttons_wizard
+msgid "The red button below is to approve or refuse all the requests for today"
+msgstr "以下的红色按键是批准或者拒绝今天所有的申请"
+
+#. module: hr_ot_request
+#: field:ot.request,today:0
+msgid "Today"
+msgstr "今天"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_search_view
+msgid "Today's Requests"
+msgstr "今天的申请"
+
+#. module: hr_ot_request
+#: view:ot.request:hr_ot_request.ot_request_tree_view
+msgid "number_of_applicants"
+msgstr "申请人数"
+
+#. module: hr_ot_request
+#: view:approve.buttons:hr_ot_request.view_approve_buttons_wizard
+msgid "or"
+msgstr "or"
+
+#. module: hr_ot_request
+#: field:ot.request,state:0
+msgid "state"
+msgstr "状态"
+
+#. module: hr_ot_request
+#: code:addons/hr_ot_request/ot_request.py:15
+#, python-format
+msgid "time is over 12:00,you can not create ot request"
+msgstr "时间已超过12点，不能创建加班申请"
+
+#. module: hr_ot_request
+#: code:addons/hr_ot_request/ot_request.py:15
+#, python-format
+msgid "warning"
+msgstr "警告"
+

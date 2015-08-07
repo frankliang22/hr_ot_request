@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<record model="ir.actions.act_window" id="ot_request_list_action">
+		    <field name="name">OT Request</field>
+		    <field name="res_model">ot.request</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form,calendar</field>
+		    <field name="help" type="html">
+				<p class="oe_view_nocontent_create">Create a new OT request</p>
+		    </field>
+		</record>
+
+		<record model="ir.ui.view" id="ot_request_form_view">
+			<field name="name">ot.request.form</field>
+			<field name="model">ot.request</field>
+			<field name="arch" type="xml">
+				<form string="OT Request Form">
+					<header>
+						<button name="draft" type="workflow" string="Set to Draft" states="confirm,refused by department,refused by administration" groups="hr_ot_request.ot_request_user_group" />
+						<button name="confirm" type="workflow" string="Confirm" states="draft" class="oe_highlight" groups="hr_ot_request.ot_request_user_group" />
+						<button name="department" type="workflow" string="Approved By Department" states="confirm" class="oe_highlight" groups="hr_ot_request.ot_request_department_group" />
+						<button name="administration" type="workflow" string="Approved By Administration" states="approved by department" class="oe_highlight" groups="hr_ot_request.ot_request_administration_group" />
+						<button name="refused by department" type="workflow" string="Refused by Department" states="confirm" class="oe_highlight" groups="hr_ot_request.ot_request_department_group" />
+						<button name="refused by administration" type="workflow" string="Refused by Administration" states="approved by department" class="oe_highlight" groups="hr_ot_request.ot_request_administration_group" />
+						<field name="state" widget="statusbar" statusbar_visible="draft,confirm,approved by department,approved by administration" />
+					</header>
+					<sheet>
+						<group>
+							<field name="description" />
+							<field name="applicant" widget="many2many_tags"/>
+							<field name="number_of_applicants" />
+							<field name="date_start" />
+							<field name="department" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="ot_request_tree_view">
+			<field name="name">ot.request.tree</field>
+			<field name="model">ot.request</field>
+			<field name="arch" type="xml">
+				<tree string="OT Request Tree">
+					<field name="number_of_applicants" sum="number_of_applicants"/>
+					<field name="date_start" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="ot_request_calendar_view">
+			<field name="name">ot.request.calendar</field>
+			<field name="model">ot.request</field>
+			<field name="arch" type="xml">
+				<calendar string="OT Request Calendar" date_start="date_start" color="applicant">
+					<field name="number_of_applicants" />
+				</calendar>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="ot_request_search_view">
+			<field name="name">to approve request</field>
+			<field name="model">ot.request</field>
+			<field name="arch" type="xml">
+				<search>
+					<group string="Filter">
+					<filter name="today_request" string="Today's Requests" domain="[('date_start','=','today')]" icon="terp-partner" />
+					<filter name="today_confirmed_request" string="Confirmed Requests in Today" domain="[('state','=','confirm'),('date_start','=','today')]" icon="terp-partner" />
+					<filter name="today_department_request" string="Approved by Department Requests in Today" domain="[('state','=','approved by department'),('date_start','=','today')]" icon="terp-partner" />
+					<filter name="today_administration_request" string="Approved by Administration in Today" domain="[('state','=','approved by administration'),('date_start','=','today')]" icon="terp-partner" />
+					<filter name="management" string="Management" domain="[('department','=','Management')]" icon="terp-partner" />
+					</group>  
+				</search>
+			</field>
+		</record> 
+
+		<menuitem id="ot_request_menu" name="OT Request" parent="hr.menu_hr_root"/>
+		<menuitem id="request_menu" name="OT Request" parent="ot_request_menu" action="ot_request_list_action"/>
+		<menuitem id="buttons_menu" parent="ot_request_menu" action="action_approve_buttons" />
+    </data>
+</openerp>
