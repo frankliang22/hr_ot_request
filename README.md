@@ -1,1 +1,1 @@
-This is the OT request system designed for Horn
+This is the OT request system designed by frank
